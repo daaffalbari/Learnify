@@ -1,0 +1,54 @@
+Pertanyaan sebelum: {previous_question}
+Jawaban: {answer}
+
+Buatlah 2-3 pertanyaan yang diajukan berdasarkan informasi yang diberikan dalam bahasa Inggirs. Pertanyaan yang dibentuk haruslah relevan dengan informasi yang diberikan. Contoh pertanyaan yang dihasilkan berdasarkan jawaban dipisahkah oleh triple backticks.
+Jika ada jawaban seperti ini: "Sama-sama! Semoga harimu menyenangkan!😊" atau sejenisnya, maka gunakan contoh no 2.
+
+Lalu, jika ada jawaban seperti "Sama-sama! Semoga harimu menyenangkan!😊" atau sejenisnya, maka output yang dihasilakn adalah string kosong.
+
+JANGAN MEMBUAT PERTANYAAN YANG SAMA DENGAN PERTANYAAN SEBELUMNYA!
+
+contoh 1:
+```
+Jawaban: "Prabowo Subianto menjadi sorotan publik dalam pemilihan umum karena latar belakang militernya yang kuat, posisi sebagai Ketua Umum Partai Gerindra, dan visinya yang nasionalis-populis. Dia dikenal karena keterlibatannya dalam beberapa pemilu sebelumnya, kontroversi seputar tuduhan pelanggaran hak asasi manusia, serta gaya komunikasinya yang lugas dan kadang emosional. Aliansi politik yang dibentuknya dan pesan-pesan yang menekankan kemandirian ekonomi serta perlindungan sumber daya alam Indonesia juga menambah perhatian terhadap kiprahnya dalam politik nasional."
+
+Maka pertanyaan yang dihasilkan adalah sebagai berikut:
+Pertanyaan: "Apa yang membuat Prabowo menjadi sorotan publik dalam pemilihan umum?" 
+
+maka akan diubah menjadi bentuk yang lebih menjelaskan pertanyaan di atas seperti:
+prompt_pertanyaan: "Jelaskan apa yang menjadi faktor utama yang membuat Prabowo menjadi sorotan publik dalam pemilihan umum. Berikan analisis terperinci mengenai pembahasan tersebut."
+
+```                                         
+
+Contoh 2:
+```
+Jawaban: "Sama-sama! Jika ada pertanyaan lebih lanjut, jangan ragu untuk bertanya. Semoga harimu menyenangkan!😊"
+
+Maka pertanyaan yang dihasilkan adalah sebagai berikut:
+pertanyaan: Semoga harimu menyenangkan
+prompt: Semoga harimu menyenangkan
+
+Optional:
+Berikan greeting kepada penggunanya, tetapi dengan format pertanyaan dan prompt.
+```
+
+Jika terdapat jawaban seperti "Sama-sama! Semoga harimu menyenangkan!😊" atau sejenisnya, jawab seperti contoh 2. 
+
+Format the outputs in JSON. Contoh:
+[
+    {{
+        "pertanyaan": "Apa yang membuat Prabowo menjadi sorotan publik dalam pemilihan umum?",
+        "prompt_pertanyaan": "Jelaskan apa yang menjadi faktor utama yang membuat Prabowo menjadi sorotan publik dalam pemilihan umum. Berikan analisis terperinci mengenai pembahasan tersebut.    
+    }},
+    {{
+        "pertanyaan": "Terimakasih!"
+        "prompt_pertanyaan": "Terimakasih telah membantu"
+    }}
+    ...
+]
+
+SELALU TAMPILKAN INI PADA OUTPUT JSON YANG DIHASILKAN JIKA CONTOH 1
+{{
+    "pertanyaan": "Terimakasih!"
+    "prompt_pertanyaan": "Terimakasih telah membantu"
+}}
